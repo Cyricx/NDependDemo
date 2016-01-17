@@ -292,7 +292,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NDependTestDAL\NDependTestDAL.csproj">
+    <ProjectReference Include="..\NDependTestDAL\NDependTestDAL.csproj">
       <Project>{9532599d-b799-4ed9-a680-46c0a831d46b}</Project>
       <Name>NDependTestDAL</Name>
     </ProjectReference>

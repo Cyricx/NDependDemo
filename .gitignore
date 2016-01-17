@@ -1,0 +1,10 @@
+﻿**/node_modules/
+node_modules/
+obj/
+[Bb]in/
+packages/
+**/bower_components/
+bower_components/
+.vs/config/applicationhost.config
+*/.sass-cache/*
+*/App_Data/*

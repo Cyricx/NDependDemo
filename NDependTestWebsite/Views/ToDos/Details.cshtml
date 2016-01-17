@@ -1,0 +1,66 @@
+﻿@model NDependTestToDos.ToDo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ToDo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDoCategory.ToDoCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDoCategory.ToDoCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompleteBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompleteBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDoPriority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDoPriority)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ToDoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

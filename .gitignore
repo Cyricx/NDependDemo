@@ -8,3 +8,4 @@ bower_components/
 .vs/config/applicationhost.config
 */.sass-cache/*
 */App_Data/*
+NDependOut/*

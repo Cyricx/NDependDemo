@@ -5,6 +5,7 @@ namespace NDependTestWebsite.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    [NDependTestInfrastructure.NotDeadYet]
     internal sealed class Configuration : DbMigrationsConfiguration<NDependTestDAL.MyContext>
     {
         public Configuration()

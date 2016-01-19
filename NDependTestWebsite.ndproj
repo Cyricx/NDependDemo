@@ -137,7 +137,7 @@ select new { t, t.NbLinesOfCode, t.NbILInstructions,
 warnif count > 0 from m in JustMyCode.Methods where 
   m.CyclomaticComplexity > 30 ||
   m.ILCyclomaticComplexity > 60 ||
-  m.ILNestingDepth > 6
+  m.ILNestingDepth > 11
   orderby m.CyclomaticComplexity descending,
           m.ILCyclomaticComplexity descending,
           m.ILNestingDepth descending

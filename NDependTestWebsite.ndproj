@@ -1223,49 +1223,6 @@ select new { t, baseClasses,
 // http://en.wikipedia.org/wiki/Composition_over_inheritance and
 // http://stackoverflow.com/questions/49002/prefer-composition-over-inheritance
 //</HowToFix>]]></Query>
-      <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Class with no descendant should be sealed if possible</Name>
-warnif count > 0 from t in JustMyCode.Types where 
-  t.IsClass && 
-  t.NbChildren ==0 && 
- !t.IsSealed && 
- !t.IsStatic 
-// && !t.IsPublic //<-- You might want to add this condition 
-                  // if you are developing a framework
-                  // with classes that are intended to be 
-                  // sub-classed by your clients.
-  orderby t.NbLinesOfCode descending
-select new { t, t.NbLinesOfCode }
-
-
-//<Description>
-// If a *non-static* class isn't declared with the keyword *sealed*,
-// it means that it can be subclassed everywhere the *non-sealed* 
-// class is visible.
-//
-// Making a class a *base class* requires significant design effort.
-// Subclassing a *non-sealed* class, not initially designed 
-// to be subclassed, will lead to unanticipated design issue.
-//
-// Most classes are *non-sealed* because developers don't care about 
-// the keyword *sealed*, not because the primary intention was to write 
-// a class that can be subclassed.
-//
-// There are minor performance gain in declaring a class as *sealed*.
-// But the real benefit of doing so, is actually to **express the 
-// intention**: *this class has not be designed to be a base class, 
-// hence it is not allowed to subclass it*.
-//
-// Notice that by default this rule matches also *public* class.
-// If you are developing a framework with classes that are intended 
-// to be subclassed by your clients, just uncomment the line
-// *&& !t.IsPublic*.
-//</Description>
-
-//<HowToFix>
-// For each matched class, take the time to assess if it is really
-// meant to be subclassed. Certainly most matched class will end up
-// being declared as *sealed*.
-//</HowToFix>]]></Query>
       <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Overrides of Method() should call base.Method()</Name>
 warnif count > 0
 from t in Types  // Take account of third-party base classes also

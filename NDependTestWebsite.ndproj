@@ -4384,11 +4384,15 @@ warnif count > 0 from m in JustMyCode.Methods where
   // Don't decrease the visibility of Main() methods.
   !m.IsEntryPoint
 
+  // Ignore methods in a class that has a parent of Controller
+  && m.ParentType.BaseClass.Name != "Controller"
+
 select new { 
    m, 
    m.Visibility , 
    CouldBeDeclared = m.OptimalVisibility,
-   m.MethodsCallingMe 
+   m.MethodsCallingMe,
+   m.ParentType.BaseClass.Name //AWESOMENESS
 }
 
 //<Description>

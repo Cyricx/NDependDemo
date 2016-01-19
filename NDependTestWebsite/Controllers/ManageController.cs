@@ -360,7 +360,7 @@ namespace NDependTestWebsite.Controllers
             }
             return false;
         }
-
+        [NDependTestInfrastructure.NotDeadYet]
         private bool HasPhoneNumber()
         {
             var user = UserManager.FindById(User.Identity.GetUserId());

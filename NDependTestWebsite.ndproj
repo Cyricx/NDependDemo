@@ -4190,7 +4190,8 @@ let canMethodBeConsideredAsDeadProc = new Func<IMethod, bool>(
 
          // If you don't want to link NDepend.API.dll, you can use your own IsNotDeadCodeAttribute 
          // and adapt the source code of this rule.
-         !m.HasAttribute("NDepend.Attributes.IsNotDeadCodeAttribute".AllowNoMatch()))
+         //Using our own attribute!
+         !m.HasAttribute("NDependTestInfrastructure.NotDeadYetAttribute".AllowNoMatch()))
 
 // Get methods unused
 let methodsUnused = 

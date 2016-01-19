@@ -8,6 +8,7 @@ namespace NDependTestWebsite.Migrations
     [NDependTestInfrastructure.NotDeadYet]
     internal sealed class Configuration : DbMigrationsConfiguration<NDependTestDAL.MyContext>
     {
+        [NDependTestInfrastructure.NotDeadYet]
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
